@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: nanfengfenfei  # 改成你的 Docker ID
+          tags: nanfengfenfei   # 改成你的 Docker ID
 
       # 4. 部署到云服务器（需替换 secrets）
       - name: Deploy to Server

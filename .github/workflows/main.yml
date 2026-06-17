@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: your-dockerhub-username/simple-web-cicd:latest  # 改成你的 Docker ID
+          tags: ya11g/simple-web-cicd:latest  # 改成你的 Docker ID
 
       # 4. 部署到云服务器（需替换 secrets）
       - name: Deploy to Server
@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}      # 服务器用户名，如 root
           password: ${{ secrets.SERVER_PASSWORD }}  # 服务器密码
           script: |
-            docker pull your-dockerhub-username/simple-web-cicd:latest
+            docker pull ya11g/simple-web-cicd:latest
             docker stop simple-web || true
             docker rm simple-web || true
-            docker run -d -p 80:5000 --name simple-web your-dockerhub-username/simple-web-cicd:latest
+            docker run -d -p 80:5000 --name simple-web ya11g/simple-web-cicd:latest

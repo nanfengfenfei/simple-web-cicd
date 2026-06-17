@@ -1,6 +1,6 @@
 """
 极简 Flask Web 应用 — CI/CD 实验演示
-yck 2440666137
+2440666154
 """
 from flask import Flask, render_template_string
 
@@ -42,7 +42,7 @@ HTML = """<!DOCTYPE html>
             <p><span>容器 ID：</span>{{ hostname }}</p>
             <p><span>部署时间：</span>{{ deploy_time }}</p>
             <p><span>环境：</span>{{ environment }}</p>
-	    <p><span>上传人：</span>fallen</p>
+            <p><span>创建人：</span>2440666154</p>
         </div>
     </div>
 </body>
@@ -61,7 +61,7 @@ def index():
     )
 
 
-@app.route("/health")
+@app.route("/health") 
 def health():
     return {"status": "healthy"}, 200
 

@@ -29,13 +29,13 @@ jobs:
 
       # 4. 部署到云服务器（需替换 secrets）
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.5
+        uses: appleboy/ssh-action@v1.0.3  # 建议升级到最新版
         with:
-          host: ${{ secrets.SERVER_HOST }}          # 服务器公网 IP
-          username: ${{ secrets.SERVER_USER }}      # 服务器用户名，如 root
-          password: ${{ secrets.SERVER_PASSWORD }}  # 服务器密码
-         script: |
-            sudo docker pull your-dockerhub-username/simple-web-cicd:latest
-            sudo docker stop simple-web || true
-            sudo docker rm simple-web || true
-            sudo docker run -d -p 80:5000 --name simple-web your-dockerhub-username/simple-web-cicd:latest
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            docker pull your-dockerhub-username/simple-web-cicd:latest
+            docker stop simple-web || true
+            docker rm simple-web || true
+            docker run -d -p 80:5000 --name simple-web nanfengfenfei/simple-web-cicd:latest

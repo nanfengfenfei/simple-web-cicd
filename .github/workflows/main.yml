@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            docker pull your-dockerhub-username/simple-web-cicd:latest
-            docker stop simple-web || true
-            docker rm simple-web || true
-            docker run -d -p 80:5000 --name simple-web nanfengfenfei/simple-web-cicd:latest
+            sudo docker pull your-dockerhub-username/simple-web-cicd:latest
+            sudo docker stop simple-web || true
+            sudo docker rm simple-web || true
+            sudo docker run -d -p 80:5000 --name simple-web nanfengfenfei/simple-web-cicd:latest

@@ -42,7 +42,7 @@ HTML = """<!DOCTYPE html>
             <p><span>容器 ID：</span>{{ hostname }}</p>
             <p><span>部署时间：</span>{{ deploy_time }}</p>
             <p><span>环境：</span>{{ environment }}</p>
-            <p><span>创建人：</span>zzk</p>
+            <p><span>创建人：</span>刘绍宇</p>
         </div>
     </div>
 </body>
